@@ -1,0 +1,18 @@
+{
+  "name": "日語隨身通 Nihongo Go — 零基礎對話到 JLPT N1",
+  "short_name": "日語隨身通",
+  "description": "專為零基礎打造的隨身日語學習 APP：五十音記憶口訣、真人情境對話跟讀、SRS 單字閃卡與 JLPT N5~N1 文法闖關",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#e11d48",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
