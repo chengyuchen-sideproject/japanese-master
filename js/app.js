@@ -104,11 +104,15 @@ function initJapaneseVoice() {
 }
 
 function speakJP(text, rate = 1.0) {
+  const cleanText = String(text || "").replace(/\s*\[[0-9]+\]/g, "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "");
+  if (window.AndroidTTS && typeof window.AndroidTTS.speak === "function") {
+    window.AndroidTTS.speak(cleanText, String(rate));
+    return;
+  }
   if (!("speechSynthesis" in window)) {
     alert("您的瀏覽器不支援語音合成 (Web Speech API)");
     return;
   }
-  const cleanText = String(text || "").replace(/\s*\[[0-9]+\]/g, "").replace(/（[^）]*）/g, "").replace(/\([^)]*\)/g, "");
   window.speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(cleanText);
   u.lang = "ja-JP";
